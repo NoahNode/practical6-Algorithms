@@ -23,8 +23,11 @@
 template<class T>
 T getNthLargest(int n, const ArrayList<T> & list)
 {
-	// replace with your algorithm 
-	return 0;
+	OrderedList<T> ordered(list);
+
+	int elementToReturn = size() - n;
+
+	return elementToReturn;
 }
 
 
