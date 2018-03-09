@@ -180,8 +180,11 @@ void ArrayList<T>::add(int pos, const T & value) {
 		throw std::out_of_range("ArrayList: invalid postion: " + std::to_string(pos));
 
 	// complete this function
+	for (int i = size(); i > pos; i--) {
+		data[i] = data[i - 1];
 
-
+	}
+	count++;
 }
 
 // PreCondition: pos is a valid ArrayList position
