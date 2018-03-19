@@ -179,10 +179,17 @@ void ArrayList<T>::add(int pos, const T & value) {
 	if (pos < 0 || pos > count)
 		throw std::out_of_range("ArrayList: invalid postion: " + std::to_string(pos));
 
-	
-	for (int i = size(); i > pos; i--) {
+	if (count >= data.length()) {
+		data.resize(data.length() * 2);
+	}
+
+	//make room for new element
+	for (int i = count; i > pos; i--) {
 		data[i] = data[i - 1];
 	}
+
+	//insert element in position
+	data[pos] = value;
 	
 	count++;
 }
