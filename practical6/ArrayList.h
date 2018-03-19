@@ -201,12 +201,11 @@ void ArrayList<T>::remove(int pos) {
 	if (pos < 0 || pos >= count)
 		throw std::out_of_range("ArrayList: invalid postion: " + std::to_string(pos));
 
-
-	// complete this function
-	for (int i = pos; i < size(); i++) {
+    //fill gap by moving elements down
+	for (int i = pos; i < count-1; i++) {
 		data[i] = data[i + 1];
 	}
-	count--;
+	count--; //decrease length
 }
 
 
