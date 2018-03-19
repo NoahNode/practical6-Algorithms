@@ -23,11 +23,19 @@
 template<class T>
 T getNthLargest(int n, const ArrayList<T> & list)
 {
+	if (n < 0 || n >= l.size()) {
+		throw std::out_of_range("Invalid value for n");
+	}
+
+	/* Instead of using this code, just use the copy constructor
+	OrderedList<T> ordered(list.size());
+
+	for (int i = 0; i < l.size(); i++) {
+		ordered.add(list.get(i));
+	}*/
 	OrderedList<T> ordered(list);
 
-	int elementToReturn = size() - n;
-
-	return elementToReturn;
+	return ordered.get(ordered.size()-n);
 }
 
 
